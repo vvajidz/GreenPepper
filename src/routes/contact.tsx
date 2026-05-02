@@ -75,6 +75,20 @@ function ContactPage() {
             data-aos-delay="150"
             onSubmit={(e) => {
               e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const data = Object.fromEntries(formData);
+              
+              const message = `*New Table Reservation Request* 🍽️\n\n` +
+                `*Name:* ${data.name}\n` +
+                `*Phone:* ${data.phone}\n` +
+                `*Date:* ${data.date}\n` +
+                `*Guests:* ${data.guests}\n` +
+                `*Message:* ${data.message || 'No special requests'}\n\n` +
+                `Please confirm my reservation.`;
+
+              const whatsappUrl = `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(message)}`;
+              window.open(whatsappUrl, '_blank');
+              
               setSent(true);
             }}
             className="glass-strong rounded-3xl p-8 space-y-5"
@@ -91,6 +105,7 @@ function ContactPage() {
                 Message
               </label>
               <textarea
+                name="message"
                 rows={3}
                 className="w-full rounded-xl bg-background/40 border border-primary/20 px-4 py-3 outline-none focus:border-primary/60 transition-colors"
               />
