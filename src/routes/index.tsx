@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Flame, Sparkles, UtensilsCrossed } from "lucide-react";
 import heroMandhi from "@/assets/hero-mandhi.jpg";
 import banquet from "@/assets/banquet-hall.jpg";
+import logo from "@/assets/logo.png";
 import { mandhiSpecials, menuPreview, restaurant } from "@/data/menu";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { FoodCard } from "@/components/FoodCard";
@@ -32,6 +33,11 @@ function Home() {
         </div>
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-up" className="animate-fade-up">
+            <img 
+              src={logo} 
+              alt="Green Pepper Restaurant Logo" 
+              className="w-64 md:w-96 mb-8 drop-shadow-2xl mx-auto lg:mx-0" 
+            />
             <div className="font-display tracking-[0.4em] text-xs text-primary mb-6">
               ✦ FARWANIYA · KUWAIT ✦
             </div>
@@ -74,9 +80,9 @@ function Home() {
               className="relative overflow-hidden rounded-3xl shadow-gold steam"
               style={{
                 WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
+                  "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
                 maskImage:
-                  "linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
+                  "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
               }}
             >
               <img
