@@ -16,6 +16,8 @@ export const restaurant = {
   phones: ["+965 5163 4325", "+965 5163 4335", "+965 5163 4394"],
   whatsapp: "96551634325",
   email: "greenpepperkuwait@gmail.com",
+  mapsUrl: "https://maps.app.goo.gl/5KkvtQvm2M9dxgAf8",
+  reviewUrl: "https://maps.app.goo.gl/5KkvtQvm2M9dxgAf8",
   instagram: [
     {
       handle: "@greenpepper_family",

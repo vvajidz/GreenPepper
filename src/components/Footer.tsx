@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Instagram, MapPin, Phone, Mail, Clock, Star } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { restaurant } from "@/data/menu";
 
@@ -54,7 +54,14 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-2">
               <MapPin size={16} className="text-primary mt-0.5 shrink-0" />{" "}
-              <span>{restaurant.address}</span>
+              <a
+                href={restaurant.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-primary"
+              >
+                {restaurant.address}
+              </a>
             </li>
             {restaurant.phones.map((p) => (
               <li key={p} className="flex gap-2">
@@ -95,6 +102,15 @@ export function Footer() {
               </a>
             ))}
           </div>
+          <a
+            href={restaurant.reviewUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-1.5 text-xs text-primary hover:underline"
+          >
+            <Star size={13} className="fill-primary" />
+            Rate Us on Google Maps
+          </a>
         </div>
       </div>
       <div className="gold-divider" />

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, MapPin, Phone, MessageCircle, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, MessageCircle, Instagram, Star } from "lucide-react";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { restaurant } from "@/data/menu";
 
@@ -42,7 +42,7 @@ function ContactPage() {
               icon={<MapPin />}
               title="Address"
               lines={[restaurant.name, restaurant.address]}
-              href={`https://maps.google.com/?q=${encodeURIComponent(restaurant.address)}`}
+              href={restaurant.mapsUrl}
             />
             <ContactCard
               icon={<Phone />}
@@ -110,6 +110,35 @@ function ContactPage() {
               </a>
             </p>
           </form>
+        </div>
+      </SectionWrapper>
+
+      {/* Rate Us Banner */}
+      <SectionWrapper>
+        <div
+          data-aos="fade-up"
+          className="glass-strong rounded-3xl p-8 md:p-12 text-center border border-primary/30"
+        >
+          <div className="flex justify-center gap-1 mb-4">
+            {[1, 2, 3, 4, 5].map((s) => (
+              <Star key={s} size={28} className="fill-primary text-primary" />
+            ))}
+          </div>
+          <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-3">
+            Loved your experience?
+          </h2>
+          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+            Your review helps other food lovers discover Green Pepper. It takes just 30 seconds!
+          </p>
+          <a
+            href={restaurant.reviewUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:scale-105 transition-transform"
+          >
+            <Star size={18} className="fill-primary-foreground" />
+            Rate Us on Google Maps
+          </a>
         </div>
       </SectionWrapper>
     </>
