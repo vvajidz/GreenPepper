@@ -7,7 +7,7 @@ import { restaurant } from "@/data/menu";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Green Pepper Kuwait" },
+      { title: "Contact — Green Pepper " },
       {
         name: "description",
         content: "Visit Green Pepper in Farwaniya, Kuwait. Call, WhatsApp, or reserve a table.",
