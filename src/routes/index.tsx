@@ -75,16 +75,8 @@ function Home() {
           <div data-aos="zoom-in" data-aos-delay="200" className="relative animate-float">
             {/* Ambient glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/25 to-transparent blur-3xl scale-110 pointer-events-none" />
-            {/* Image with faded sides using mask */}
-            <div
-              className="relative overflow-hidden rounded-3xl shadow-gold steam"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-                maskImage:
-                  "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-              }}
-            >
+            {/* Image with golden border */}
+            <div className="relative overflow-hidden rounded-3xl shadow-gold steam border-2 border-primary/60">
               <img
                 src={heroMandhi}
                 alt="Signature Mandhi platter"
