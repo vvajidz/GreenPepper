@@ -29,13 +29,13 @@ function MandhiPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
         <div className="container mx-auto px-6 text-center max-w-3xl">
-          <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">
+          <div data-aos="fade-down" className="font-display tracking-[0.4em] text-xs text-primary mb-4">
             SIGNATURE COLLECTION
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl mb-6 text-gradient-gold">
+          <h1 data-aos="fade-up" data-aos-delay="100" className="font-serif text-5xl md:text-7xl mb-6 text-gradient-gold">
             Mandhi Special
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p data-aos="fade-up" data-aos-delay="200" className="text-muted-foreground text-lg leading-relaxed">
             Charcoal-smoked, slow-perfumed and laid on saffron rice. The pride of our kitchen in
             Farwaniya.
           </p>
@@ -49,7 +49,10 @@ function MandhiPage() {
               key={m.id}
               className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}
             >
-              <div className="relative group">
+              <div
+                data-aos={i % 2 ? "fade-left" : "fade-right"}
+                className="relative group"
+              >
                 <div className="absolute inset-0 bg-primary/20 blur-3xl scale-90 opacity-60 group-hover:opacity-100 transition-opacity" />
                 <div className="relative aspect-square rounded-3xl overflow-hidden border border-primary/30 shadow-gold steam">
                   <img
@@ -60,7 +63,7 @@ function MandhiPage() {
                   />
                 </div>
               </div>
-              <div>
+              <div data-aos={i % 2 ? "fade-right" : "fade-left"} data-aos-delay="150">
                 <div className="font-display tracking-[0.4em] text-xs text-primary mb-3">
                   {m.tagline.toUpperCase()}
                 </div>
@@ -111,9 +114,11 @@ function MandhiPage() {
         subtitle="Pick your favorite — every plate served with rice, sauces and pickles."
       >
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl mx-auto">
-          {allMandhi.map((it) => (
+          {allMandhi.map((it, i) => (
             <div
               key={it.name}
+              data-aos="fade-up"
+              data-aos-delay={i * 50}
               className="flex items-baseline gap-3 py-3 border-b border-primary/10"
             >
               <div className="flex-1">

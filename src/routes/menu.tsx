@@ -29,18 +29,18 @@ function MenuPage() {
     <>
       <section className="pt-32 pb-12">
         <div className="container mx-auto px-6 text-center max-w-2xl">
-          <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">
+          <div data-aos="fade-down" className="font-display tracking-[0.4em] text-xs text-primary mb-4">
             THE FULL EXPERIENCE
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl text-gradient-gold mb-4">Our Menu</h1>
-          <p className="text-muted-foreground">
+          <h1 data-aos="fade-up" data-aos-delay="100" className="font-serif text-5xl md:text-6xl text-gradient-gold mb-4">Our Menu</h1>
+          <p data-aos="fade-up" data-aos-delay="200" className="text-muted-foreground">
             Crafted with care. Priced fairly. Served with pride.
           </p>
         </div>
       </section>
 
       <SectionWrapper>
-        <div className="flex flex-wrap gap-2 justify-center mb-12">
+        <div data-aos="fade-up" className="flex flex-wrap gap-2 justify-center mb-12">
           {categories.map((c) => (
             <button
               key={c}
@@ -57,16 +57,18 @@ function MenuPage() {
         </div>
 
         <div className="space-y-16">
-          {visible.map(([cat, items]) => (
-            <div key={cat}>
+          {visible.map(([cat, items], catIdx) => (
+            <div key={cat} data-aos="fade-up" data-aos-delay={catIdx * 80}>
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="font-serif text-3xl text-gradient-gold">{cat}</h2>
                 <div className="flex-1 gold-divider" />
               </div>
               <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
-                {items.map((it) => (
+                {items.map((it, i) => (
                   <div
                     key={it.name}
+                    data-aos="fade-up"
+                    data-aos-delay={i * 40}
                     className="flex items-baseline gap-3 py-3 border-b border-primary/10"
                   >
                     <div className="flex-1">

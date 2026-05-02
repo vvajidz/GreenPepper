@@ -24,9 +24,9 @@ function AboutPage() {
     <>
       <section className="pt-32 pb-12">
         <div className="container mx-auto px-6 text-center max-w-2xl">
-          <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">EST. 2009</div>
-          <h1 className="font-serif text-5xl md:text-6xl text-gradient-gold mb-4">Our Story</h1>
-          <p className="text-muted-foreground leading-relaxed">
+          <div data-aos="fade-down" className="font-display tracking-[0.4em] text-xs text-primary mb-4">EST. 2009</div>
+          <h1 data-aos="fade-up" data-aos-delay="100" className="font-serif text-5xl md:text-6xl text-gradient-gold mb-4">Our Story</h1>
+          <p data-aos="fade-up" data-aos-delay="200" className="text-muted-foreground leading-relaxed">
             Born from a family kitchen, Green Pepper has grown into one of the region's most loved
             dining and banquet destinations.
           </p>
@@ -36,12 +36,13 @@ function AboutPage() {
       <SectionWrapper>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <img
+            data-aos="fade-right"
             src={hero}
             alt="Mandhi tradition"
             loading="lazy"
             className="rounded-3xl shadow-soft border border-primary/20"
           />
-          <div>
+          <div data-aos="fade-left" data-aos-delay="150">
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-5">
               A taste rooted in tradition
             </h2>
@@ -80,9 +81,11 @@ function AboutPage() {
               title: "Built for Gatherings",
               text: "From quiet dinners to 500-guest weddings.",
             },
-          ].map((v) => (
+          ].map((v, i) => (
             <div
               key={v.title}
+              data-aos="zoom-in"
+              data-aos-delay={i * 100}
               className="glass-strong rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform"
             >
               <div className="h-12 w-12 mx-auto rounded-full bg-gradient-gold grid place-items-center text-primary-foreground mb-4">
@@ -97,7 +100,7 @@ function AboutPage() {
 
       <SectionWrapper>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
+          <div data-aos="fade-right" className="order-2 lg:order-1">
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-5">
               More Than a Restaurant
             </h2>
@@ -107,6 +110,8 @@ function AboutPage() {
             </p>
           </div>
           <img
+            data-aos="fade-left"
+            data-aos-delay="150"
             src={banquet}
             alt="Banquet hall"
             loading="lazy"

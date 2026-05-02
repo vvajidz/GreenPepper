@@ -25,11 +25,11 @@ function ContactPage() {
     <>
       <section className="pt-32 pb-12">
         <div className="container mx-auto px-6 text-center max-w-2xl">
-          <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">SAY HELLO</div>
-          <h1 className="font-serif text-5xl md:text-6xl text-gradient-gold mb-4">
+          <div data-aos="fade-down" className="font-display tracking-[0.4em] text-xs text-primary mb-4">SAY HELLO</div>
+          <h1 data-aos="fade-up" data-aos-delay="100" className="font-serif text-5xl md:text-6xl text-gradient-gold mb-4">
             Visit Us in Farwaniya
           </h1>
-          <p className="text-muted-foreground">
+          <p data-aos="fade-up" data-aos-delay="200" className="text-muted-foreground">
             We would love to host you. Reach out for reservations, orders or events.
           </p>
         </div>
@@ -37,7 +37,7 @@ function ContactPage() {
 
       <SectionWrapper>
         <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-5">
+          <div data-aos="fade-right" className="space-y-5">
             <ContactCard
               icon={<MapPin />}
               title="Address"
@@ -71,6 +71,8 @@ function ContactPage() {
           </div>
 
           <form
+            data-aos="fade-left"
+            data-aos-delay="150"
             onSubmit={(e) => {
               e.preventDefault();
               setSent(true);

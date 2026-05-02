@@ -28,13 +28,13 @@ function BanquetPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/85 to-background" />
         </div>
         <div className="container mx-auto px-6 text-center max-w-3xl">
-          <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">
+          <div data-aos="fade-down" className="font-display tracking-[0.4em] text-xs text-primary mb-4">
             CELEBRATE WITH US
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl text-gradient-gold mb-6">
+          <h1 data-aos="fade-up" data-aos-delay="100" className="font-serif text-5xl md:text-7xl text-gradient-gold mb-6">
             The Banquet Hall
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p data-aos="fade-up" data-aos-delay="200" className="text-muted-foreground text-lg leading-relaxed">
             An elegant venue for weddings, receptions and grand celebrations — designed in deep
             emerald, lit in soft gold.
           </p>
@@ -48,8 +48,13 @@ function BanquetPage() {
             { icon: <Utensils />, label: "Custom Catering" },
             { icon: <Sparkles />, label: "Stage & Decor" },
             { icon: <Calendar />, label: "Full Event Planning" },
-          ].map((s) => (
-            <div key={s.label} className="glass-strong rounded-2xl p-6 text-center">
+          ].map((s, i) => (
+            <div
+              key={s.label}
+              data-aos="zoom-in"
+              data-aos-delay={i * 100}
+              className="glass-strong rounded-2xl p-6 text-center"
+            >
               <div className="h-12 w-12 mx-auto rounded-full bg-gradient-gold grid place-items-center text-primary-foreground mb-3">
                 {s.icon}
               </div>
@@ -60,12 +65,13 @@ function BanquetPage() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <img
+            data-aos="fade-right"
             src={banquet}
             alt="Banquet hall"
             loading="lazy"
             className="rounded-3xl shadow-soft border border-primary/20"
           />
-          <div>
+          <div data-aos="fade-left" data-aos-delay="150">
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-5">
               Designed for unforgettable evenings
             </h2>
@@ -79,13 +85,19 @@ function BanquetPage() {
                 "In-house Mandhi & biriyani buffets",
                 "Live counters & desserts",
                 "Valet & guest concierge",
-              ].map((f) => (
-                <li key={f} className="flex items-center gap-3 text-sm">
+              ].map((f, i) => (
+                <li
+                  key={f}
+                  data-aos="fade-left"
+                  data-aos-delay={i * 80}
+                  className="flex items-center gap-3 text-sm"
+                >
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" /> {f}
                 </li>
               ))}
             </ul>
             <a
+              data-aos="fade-up"
               href={`https://wa.me/${restaurant.whatsapp}`}
               target="_blank"
               rel="noreferrer"

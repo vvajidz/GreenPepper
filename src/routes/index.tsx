@@ -31,7 +31,7 @@ function Home() {
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/30 blur-3xl" />
         </div>
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-up">
+          <div data-aos="fade-up" className="animate-fade-up">
             <div className="font-display tracking-[0.4em] text-xs text-primary mb-6">
               ✦ FARWANIYA · KUWAIT ✦
             </div>
@@ -66,7 +66,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="relative animate-float">
+          <div data-aos="zoom-in" data-aos-delay="200" className="relative animate-float">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent blur-3xl scale-110" />
             <div className="relative aspect-square rounded-full overflow-hidden border-2 border-primary/30 shadow-gold steam">
               <img
@@ -95,6 +95,8 @@ function Home() {
           {mandhiSpecials.map((m, i) => (
             <div
               key={m.id}
+              data-aos="fade-up"
+              data-aos-delay={i * 120}
               className="glass-strong rounded-2xl p-6 flex items-center gap-4 hover:-translate-y-1 transition-transform animate-fade-up"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
@@ -127,6 +129,7 @@ function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {mandhiSpecials.map((m) => (
             <FoodCard
+              data-aos="fade-up"
               key={m.id}
               name={m.name}
               nameAr={m.nameAr}
@@ -179,7 +182,7 @@ function Home() {
       {/* ABOUT */}
       <SectionWrapper>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
+          <div data-aos="fade-right" className="relative">
             <img
               src={banquet}
               alt="Green Pepper banquet hall"
@@ -193,7 +196,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div>
+          <div data-aos="fade-left" data-aos-delay="150">
             <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">OUR STORY</div>
             <h2 className="font-serif text-4xl md:text-5xl text-gradient-gold mb-6">
               A Family Tradition of Flavor
@@ -218,7 +221,7 @@ function Home() {
       {/* BANQUET */}
       <SectionWrapper>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
+          <div data-aos="fade-right" className="order-2 lg:order-1">
             <div className="font-display tracking-[0.4em] text-xs text-primary mb-4">
               CELEBRATIONS
             </div>
@@ -248,7 +251,7 @@ function Home() {
               Book the Hall <ArrowRight size={18} />
             </Link>
           </div>
-          <div className="order-1 lg:order-2 relative">
+          <div data-aos="fade-left" data-aos-delay="150" className="order-1 lg:order-2 relative">
             <img
               src={banquet}
               alt="Banquet hall"
